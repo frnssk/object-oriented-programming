@@ -28,6 +28,9 @@ package p6;
  * no contributions from red, green, or blue), and opaque-white would be
  * 0xFFFFFFFF
  */
+
+//kommentar av frasse
+
 public class Color {
     public static final int BLACK       = 0xFF000000;
     public static final int DKGRAY      = 0xFF444444;
