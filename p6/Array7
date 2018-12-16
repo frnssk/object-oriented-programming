@@ -78,7 +78,11 @@ public class Array7 {
 	 * @return an int array
 	 */ 
 	public int[] toIntArray() {
-		return new int[7];
+		int[] newArr = new int[this.array.length];
+		for(int i=0;i<newArr.length;i++) {
+			newArr[i]=getElement(i);
+		}
+		return newArr;
 	}
 
 }
