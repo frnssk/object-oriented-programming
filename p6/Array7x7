@@ -123,6 +123,53 @@ public class Array7x7 {
 	public int[][] toIntArray(){
 		return new int[7][7];
 	}
-
+	/**
+	 * Moves the values in the array to the right 
+	 * and returns an Array7-object of the values 
+	 * which was "pushed over".
+	 * 
+	 * @param a7 the array which will be set to the left most column 
+	 * given by the outer JTextFields
+	 * @return an Array7-object
+	 */
+	public Array7 shiftRight(Array7 a7) {
+		int[][] arr = new int[7][7];
+		int[] overArr = new int[7];
+		for(int i=0;i<7;i++) {
+			for(int j=0;j<6;j++) {
+				arr[i][j+1]=this.getElement(i,j);
+				arr[i][0]=a7.getElement(i);
+			}
+			overArr[i]=this.getElement(i,6);
+		}
+		this.array=arr;
+		Array7 arr7 = new Array7();
+		arr7.setArray(overArr);
+		return arr7;
+	}
+	/**
+	 * Moves the values in the array to the left 
+	 * and returns an Array7-object of the values 
+	 * which was "pushed over".
+	 * 
+	 * @param a7 a7 the array which will be set to the right most column 
+	 * given by the outer JTextFields
+	 * @return an Array7-object
+	 */
+	public Array7 shiftLeft(Array7 a7) {
+		int[][] arr = new int[7][7];
+		int[] overArr = new int[7];
+		for(int i=0;i<7;i++) {
+			for(int j=1;j<7;j++) {
+				arr[i][j-1]=this.getElement(i,j);
+				arr[i][6]=a7.getElement(i);
+			}
+			overArr[i]=this.getElement(i,0);
+		}
+		this.array=arr;
+		Array7 arr7 = new Array7();
+		arr7.setArray(overArr);
+		return arr7;
+	}
 }
 
